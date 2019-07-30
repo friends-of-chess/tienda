@@ -6,4 +6,5 @@ $productos = [
     ["nombre" => "refresco", "precio" => 2],
 ];
 
+header("Content-type: application/json");
 echo json_encode($productos);
