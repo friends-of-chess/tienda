@@ -19,7 +19,8 @@ if($db->connect_error){
 $stmt = $db->prepare("SELECT nombre, descripcion, precio, imagen, stock FROM productos WHERE id=?");
 $stmt->bind_param('i', $id);
 
-if(!isset($_GET['id'])){    
+if(!isset($_GET['id'])){  
+    $stmt->close();  
     $db->close();
     echo "No existe ningún ID.<br>";
 }else{
